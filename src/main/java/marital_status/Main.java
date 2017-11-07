@@ -1,9 +1,11 @@
 package marital_status;
 
 
-public class Main {
+import lombok.SneakyThrows;
 
-    public static void main(String[] args) throws InterruptedException {
+public class Main {
+    @SneakyThrows
+    public static void main(String[] args) {
         final PersonService personService = new PersonService();
         final PersonReader personReader = new PersonReader();
 

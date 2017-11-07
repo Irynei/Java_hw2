@@ -1,9 +1,11 @@
 package http_handler;
 
+import lombok.SneakyThrows;
 import org.fluttercode.datafactory.impl.DataFactory;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    @SneakyThrows
+    public static void main(String[] args){
         HttpService httpService = new HttpService();
         final DataFactory dataFactory = new DataFactory();
         while(true) {

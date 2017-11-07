@@ -2,6 +2,7 @@ package mail_sender_2;
 
 
 import javassist.Modifier;
+import lombok.SneakyThrows;
 import org.reflections.Reflections;
 
 import java.util.HashMap;
@@ -12,7 +13,8 @@ public class MailSender2 {
 
     private Map<Integer, MailGenerator> map = new HashMap<>();
 
-    public MailSender2() throws IllegalAccessException, InstantiationException {
+    @SneakyThrows
+    public MailSender2() {
         Reflections scanner = new Reflections("mail_sender_2");
         Set<Class<? extends MailGenerator>> classes = scanner.getSubTypesOf(MailGenerator.class);
         for (Class<? extends MailGenerator> aClass : classes) {
